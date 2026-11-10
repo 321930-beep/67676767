@@ -1,1 +1,385 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StreamHub</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0c0f17;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVIGATION */
+
+header {
+    height: 75px;
+    background: #151925;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    border-bottom: 1px solid #292e3c;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #ff303b;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+/* HERO */
+
+.hero {
+    padding: 65px 7%;
+    background: linear-gradient(120deg, #222c49, #10131d);
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: #b8c0d0;
+    margin-bottom: 25px;
+}
+
+/* BROWSER */
+
+.browser {
+    padding: 35px 7%;
+}
+
+.section-title {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.browser-box {
+    background: #1b2130;
+    padding: 22px;
+    border-radius: 14px;
+    border: 1px solid #30394b;
+}
+
+.address-bar {
+    display: flex;
+    gap: 10px;
+}
+
+.address-bar input {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    background: #0e1320;
+    border: 1px solid #3b455a;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+button {
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #bd0710;
+}
+
+.search-label {
+    color: #9ba5b8;
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+/* QUICK LINKS */
+
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.quick-links a {
+    background: #293247;
+    padding: 12px 18px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.quick-links a:hover {
+    background: #3b4965;
+}
+
+/* STREAMING */
+
+.streaming {
+    padding: 35px 7%;
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1b2130;
+    border: 1px solid #30394b;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 14px;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #697994;
+}
+
+.card h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #aeb7c8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.card a {
+    display: inline-block;
+    padding: 11px 23px;
+    background: #e50914;
+    border-radius: 7px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.card a:hover {
+    background: #bd0710;
+}
+
+/* INDIVIDUAL BRAND COLORS */
+
+.youtube h2 { color: #ff3333; }
+.netflix h2 { color: #e50914; }
+.peacock h2 { color: #d9b5ff; }
+.twitch h2 { color: #a970ff; }
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    color: #747e91;
+    font-size: 13px;
+    margin-top: 30px;
+}
+
+@media(max-width: 600px) {
+    header {
+        padding: 0 5%;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .address-bar {
+        flex-direction: column;
+    }
+
+    .address-bar button {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">STREAMHUB</div>
+
+    <nav>
+        <a href="#browser">Browser</a>
+        <a href="#streaming">Streaming</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Everything in One Place.</h1>
+    <p>Your personal entertainment and browsing dashboard.</p>
+</section>
+
+<section class="browser" id="browser">
+
+    <h2 class="section-title">Internet Browser</h2>
+
+    <div class="browser-box">
+
+        <form class="address-bar" id="browserForm">
+
+            <input
+                type="text"
+                id="address"
+                placeholder="Search DuckDuckGo or enter a website..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit">GO</button>
+
+        </form>
+
+        <p class="search-label">
+            Powered by DuckDuckGo
+        </p>
+
+        <div class="quick-links">
+
+            <a href="https://duckduckgo.com" target="_blank">DuckDuckGo</a>
+
+            <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a>
+
+            <a href="https://www.youtube.com" target="_blank">YouTube</a>
+
+            <a href="https://www.google.com" target="_blank">Google</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="streaming" id="streaming">
+
+    <h2 class="section-title">Streaming Platforms</h2>
+
+    <div class="platform-grid">
+
+        <div class="card netflix">
+            <h2>NETFLIX</h2>
+            <p>Movies, series and entertainment.</p>
+            <a href="https://www.netflix.com" target="_blank">
+                Open Netflix
+            </a>
+        </div>
+
+        <div class="card peacock">
+            <h2>PEACOCK</h2>
+            <p>Movies, shows and live entertainment.</p>
+            <a href="https://www.peacocktv.com" target="_blank">
+                Open Peacock
+            </a>
+        </div>
+
+        <div class="card youtube">
+            <h2>YouTube</h2>
+            <p>Videos, creators and entertainment.</p>
+            <a href="https://www.youtube.com" target="_blank">
+                Open YouTube
+            </a>
+        </div>
+
+        <div class="card twitch">
+            <h2>TWITCH</h2>
+            <p>Gaming, live streams and creators.</p>
+            <a href="https://www.twitch.tv" target="_blank">
+                Open Twitch
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    STREAMHUB © 2026 | Personal Entertainment Dashboard
+</footer>
+
+<script>
+
+// DuckDuckGo search and address navigation
+
+document.getElementById("browserForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let input = document
+        .getElementById("address")
+        .value.trim();
+
+    if (!input) return;
+
+    let destination;
+
+    if (/^https?:\/\//i.test(input)) {
+        destination = input;
+    }
+
+    else if (
+        /^[a-z0-9-]+\.[a-z]{2,}/i.test(input) &&
+        !input.includes(" ")
+    ) {
+        destination = "https://" + input;
+    }
+
+    else {
+        destination =
+            "https://duckduckgo.com/?q=" +
+            encodeURIComponent(input);
+    }
+
+    window.open(destination, "_blank");
+
+});
+
+</script>
+
+</body>
+</html>
+
